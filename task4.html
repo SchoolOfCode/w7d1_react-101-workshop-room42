@@ -19,8 +19,8 @@
     <script type="text/babel">
       const rootElement = document.querySelector("#root");
 
-      function ListItem(props) {
-        // code here
+      function ListItem({text}) {
+        return <li className="bullet"> {text} </li>
       }
 
       ReactDOM.render(
