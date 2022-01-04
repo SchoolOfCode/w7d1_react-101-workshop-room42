@@ -4,15 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+  src="https://unpkg.com/react@17/umd/react.development.js"
+  crossorigin
+></script>
+<script
+  src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+  crossorigin
+></script>
   </head>
   <body>
     <div id="root"></div>
     <script>
       const rootElement = document.querySelector("#root");
-      const element = document.createElement("div");
-      element.innerText = "Hello World";
-      element.className = "container";
-      rootElement.appendChild(element);
+      // const element = document.createElement("div");
+      // element.innerText = "Hello World";
+      //element.className = "container";
+
+      // Added extra elements to test rendering multiple elements within a single one (use array)
+      const heading = React.createElement("h1", {className: "heading"}, "This is the heading")
+      const para = React.createElement("p", {className: "para"}, "this is the paragraph text inside of the div")
+      const element = React.createElement("div", {className: "container"}, [heading, para])
+
+      ReactDOM.render(element, rootElement)
+      //rootElement.appendChild(element);
     </script>
   </body>
 </html>
