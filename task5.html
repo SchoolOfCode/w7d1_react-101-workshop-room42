@@ -20,23 +20,21 @@
       const rootElement = document.querySelector("#root");
 
       function ListItem({text}) {
+        
         return <li className="bullet"> {text} </li>
       }
 
-      function List(props) {
-        console.log(props)
-        console.log(props.children)
-        const array = props.children.forEach((prop) => {return prop.text})
-        console.log(array)
-        return <ul className="list"> <ListItem />
+      function List({children}) {
+        
+        return <ul className="list"> {children}
           </ul>
       }
 
       ReactDOM.render(
         <List>
-          <ListItem text="Milk" />,
-          <ListItem text="Milk" />,
-          <ListItem text="Flour" />,
+          <ListItem text="Milk" />
+          <ListItem text="Milk" />
+          <ListItem text="Flour" />
         </List>,
         rootElement
       );

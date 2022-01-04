@@ -19,11 +19,23 @@
     <script type="text/babel">
       const rootElement = document.querySelector("#root");
 
-      function CheckBox(props) {
+
+
+     function CreateText(){
+
+      return <div>Hello World </div>
+
+     }
+
+      function CheckBox({checked, isDisabled }) {
+
+        return <input type="checkbox" checked={checked} disabled={isDisabled}/>
         // render a checkbox that is controlled by the checked prop
       }
 
-      ReactDOM.render(<CheckBox checked={true} />, rootElement);
+  
+
+      ReactDOM.render([<CreateText />, <CheckBox checked={true} isDisabled={true}/>], rootElement);
     </script>
   </body>
 </html>
