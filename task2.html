@@ -21,11 +21,16 @@
       function handleClick(e) {
         alert("You clicked me!");
       }
+
       function Button(props) {
-        return React.createElement("button", {className: "button"}, [props.buttonName, props.handleClick])
+        console.log(props)
+        return React.createElement("button", {className: "button", onClick: props.functionName}, props.buttonName)
       }
 
-      ReactDOM.render(Button(), rootElement);
+      const button1= Button({buttonName: "submit", functionName: handleClick})
+
+      ReactDOM.render([button1, button], rootElement);
+
     </script>
   </body>
 </html>
